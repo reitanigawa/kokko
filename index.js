@@ -29,7 +29,7 @@ var Kokko = function (root, opt) {
 
 };
 
-Koko.prototype.start = function () {
+Kokko.prototype.start = function () {
     this.startServer(function (err) {
         if (err) {
             console.error((err + '').error);
@@ -54,7 +54,7 @@ Kokko.prototype.startServer = function (callback) {
           }}));
     app.use(express.directory(this.root));
 }
-Koko.prototype.open = function (callback) {
+Kokko.prototype.open = function (callback) {
     callback = callback || function () {};
 
     var openPath = this.openPath;
