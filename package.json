@@ -1,10 +1,10 @@
 {
-  "name": "koko",
-  "version": "0.6.0",
+  "name": "kokko",
+  "version": "0.0.1",
   "scripts": {
-    "start": "./bin/koko"
+    "start": "./bin/kokko"
   },
-  "bin": "bin/koko",
+  "bin": "bin/kokko",
   "dependencies": {
     "colors": "~0.6.0-1",
     "empty-port": "0.0.1",
