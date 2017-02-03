@@ -1,0 +1,39 @@
+var path = require('path'),
+    Kokko = require(__dirname + '/../');
+
+var argv = require('optimist')
+    .describe('p', 'document root for server')
+    .alias('p', 'path')
+    .default('p', '.')
+
+    .describe('P', 'set static port')
+    .alias('P', 'port')
+
+    .describe('o', 'open server\'s url on browser')
+    .alias('o', 'open')
+
+    .describe('h', 'show this help menu')
+    .boolean('h')
+    .alias('h', 'help')
+
+    .describe('encode', 'encode character set')
+    .alias('e', 'encode')
+    .default('e', 'utf8')
+
+    .argv;
+
+if (argv.h) {
+    console.log(require('optimist').help());
+    process.exit();
+}
+
+var dirname = argv.p || '.';
+var dirpath = path.resolve(dirname);
+
+var kokko = new Kokko(dirpath, {
+    openPath: argv.o,
+    staticPort: argv.port,
+    encode: argv.encode
+});
+
+kokko.start();
